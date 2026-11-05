@@ -3,10 +3,21 @@ import time as t
 
 
 class BankAccount:
+
+    bank_name = 'National Bank'
+
     def __init__(self, account_holder, balance):
         self.account_holder = account_holder
         self.balance = balance
 
+
+    @classmethod
+    def change_bank_name(cls, new_name):
+
+        cls.bank_name = new_name
+
+        print({cls.bank_name})
+  
     def deposit(self, deposite_amount):
 
         self.balance = self.balance + deposite_amount
@@ -46,24 +57,31 @@ class BankAccount:
 
 
     def display_balance(self):
+        print(f'{self.bank_name}')
         print(f'Account Holder: {self.account_holder}')
         print(f'Total Balance in Account: {self.balance}')
 
         
 
+
 a1 = BankAccount('John', 1000)
 # a1.deposit(50)
 # a1.withdraw(20)
-# a1.display_balance()
-# a1.check_balance()
 
-a2 = BankAccount('Deo', 500)
-
-# a1.money_transfer(200, a2)
-a1.money_transfer(300, a2)
-
+a1.change_bank_name('Pesso wala bank ')
 a1.display_balance()
+# # a1.check_balance()
+
+# a2 = BankAccount('Deo', 500)
 # a2.display_balance()
+
+# # a1.money_transfer(200, a2)
+# a1.money_transfer(300, a2)
+
+# a1.display_balance()
+# # a2.display_balance()
+
+
 
 
 
